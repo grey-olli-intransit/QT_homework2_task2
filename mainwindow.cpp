@@ -103,9 +103,11 @@ void MainWindow::on_pushButtonAdd_clicked()
     modelStr->setData(index,"NEWITEM",Qt::DisplayRole);
     if (listMode == false) {
         ui->listView->setModel(model);
+        ui->listView->setCurrentIndex(index); //<-- Здесь выбирается последняя добавленная строка
     }
     else {
         ui->listView->setModel(modelStr);
+        ui->listView->setCurrentIndex(index); //<-- Здесь выбирается последняя добавленная строка
     }
     breakpoint++;
 //    selectionModel->clearSelection();
